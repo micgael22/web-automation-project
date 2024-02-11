@@ -12,7 +12,7 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pageObjects.poLoginPage;
-import scenarios.AppScenario;
+import scenarios.WebScenario;
 import scenarios.LoginScenario;
 import utilities.GeneralModels;
 import utilities.SeleniumHelpers;
@@ -22,7 +22,7 @@ import java.net.MalformedURLException;
 import java.time.Duration;
 
 public class BaseController extends Constants implements ITest{
-    public AppScenario uiActionScenario;
+    public WebScenario uiActionScenario;
     public LoginScenario loginSC;
     public static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class.getSimpleName());
     private static String testName = "";
@@ -69,7 +69,7 @@ public class BaseController extends Constants implements ITest{
         verificationWait = new WebDriverWait(driver, timeout);
 
         uiAction = new Action(getDriver());
-        uiActionScenario = new AppScenario(getDriver());
+        uiActionScenario = new WebScenario(getDriver());
         helpers = new SeleniumHelpers(getDriver());
         general = new GeneralModels(getDriver());
 
