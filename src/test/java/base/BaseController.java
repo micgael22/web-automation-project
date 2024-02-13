@@ -41,13 +41,12 @@ public class BaseController extends Constants implements ITest{
     @BeforeTest
     public void beforeTest(ITestContext iContext) throws IOException {
         LOGGER.info("====== LOG @beforeTest | CONTEXT  : " + iContext.getCurrentXmlTest().getClasses().toString().toLowerCase());
-        if(iContext.getCurrentXmlTest().getClasses().toString().toLowerCase().contains("ultimateqa") && TARGET == null || BASEURL == null){
+        if(iContext.getCurrentXmlTest().getClasses().toString().toLowerCase().contains("swaglabs") && TARGET == null || BASEURL == null){
+            PROJECTNAME = "SWAGLABS";
+            BASEURL = "https://www.saucedemo.com";
+        }else if(iContext.getCurrentXmlTest().getClasses().toString().toLowerCase().contains("ultimateqa")){
             PROJECTNAME = "ULTIMATEQA";
             BASEURL = "https://ultimateqa.com/automation";
-            // Able to switch
-        }else if(iContext.getCurrentXmlTest().getClasses().toString().toLowerCase().contains("PROJECT-NAME2nd")){
-            PROJECTNAME = "PROJECT-NAME2nd";
-            BASEURL = "secondwebsite.com";
         }
         LOGGER.info("============= BEFORE TEST =============") ;
     }
