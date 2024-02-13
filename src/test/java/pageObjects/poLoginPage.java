@@ -25,8 +25,8 @@ public class poLoginPage extends Constants {
     @FindBy(xpath = "//input[@placeholder='example@gmail.com']")
     public WebElement inputEmail;
 
-    @FindBy(xpath = "//input[@id='RealPassword2']")
-    public WebElement inputPassword;
+//    @FindBy(xpath = "//input[@id='RealPassword2']")
+//    public WebElement inputPassword;
 
     @FindBy(css = ".login-button")
     public WebElement btnSignIn;
@@ -40,7 +40,18 @@ public class poLoginPage extends Constants {
     @FindBy(css = "#Skills_Improved")
     public WebElement headerSkills;
 
+    /** Login locators **/
+    @FindBy(css = ".login_logo")
+    public WebElement headerSwagLabs;
 
+    @FindBy(css = "#user-name")
+    public WebElement inputUsername;
+
+    @FindBy(css = "#password")
+    public WebElement inputPassword;
+
+    @FindBy(css = "#login-button")
+    public WebElement btnLogin;
 
 
 }
