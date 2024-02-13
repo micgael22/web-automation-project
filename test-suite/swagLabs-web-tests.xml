@@ -5,13 +5,19 @@
     <listeners>
         <listener class-name="components.TestListener"/>
     </listeners>
-    <parameter name="WEB_URL" value="https://ultimateqa.com/automation"/>
+    <parameter name="WEB_URL" value="https://www.saucedemo.com"/>
     <parameter name="TARGET" value="LOCAL"/>
     <parameter name="BROWSER_TYPE" value="CHROME"/>
-    <parameter name="WEB_NAME" value="ULTIMATEQA"/>
+    <parameter name="WEB_NAME" value="SWAGLABS"/>
     <parameter name="ENVIRONMENT" value="TESTS"/>
 
-    <test name="ULTIMATE QA">
-
+    <test name="SWAG LABS">
+        <classes>
+            <class name="tests.swagLabs.TC_0001Login">
+                <methods>
+                    <include name="loginInvalidCreds"/>
+                </methods>
+            </class>
+        </classes>
     </test>
 </suite>
