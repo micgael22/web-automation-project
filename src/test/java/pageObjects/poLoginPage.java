@@ -21,25 +21,6 @@ public class poLoginPage extends Constants {
         helpers = new SeleniumHelpers(this.driver);
     }
 
-
-    @FindBy(xpath = "//input[@placeholder='example@gmail.com']")
-    public WebElement inputEmail;
-
-//    @FindBy(xpath = "//input[@id='RealPassword2']")
-//    public WebElement inputPassword;
-
-    @FindBy(css = ".login-button")
-    public WebElement btnSignIn;
-
-    @FindBy(css = "#Automation_Practice")
-    public WebElement headerQA;
-
-    @FindBy(xpath = "//a[contains(text(),'Big page with many elements')]")
-    public WebElement linkBigPage;
-
-    @FindBy(css = "#Skills_Improved")
-    public WebElement headerSkills;
-
     /** Login locators **/
     @FindBy(css = ".login_logo")
     public WebElement headerSwagLabs;
@@ -52,6 +33,9 @@ public class poLoginPage extends Constants {
 
     @FindBy(css = "#login-button")
     public WebElement btnLogin;
+
+    @FindBy(css = "*[data-test=\"error\"]")
+    public WebElement msgError;
 
 
 }
