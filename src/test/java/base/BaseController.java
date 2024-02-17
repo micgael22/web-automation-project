@@ -11,7 +11,9 @@ import org.testng.ITest;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import pageObjects.poCheckout;
 import pageObjects.poLoginPage;
+import scenarios.CheckoutScenario;
 import scenarios.WebScenario;
 import scenarios.LoginScenario;
 import utilities.GeneralModels;
@@ -24,6 +26,7 @@ import java.time.Duration;
 public class BaseController extends Constants implements ITest{
     public WebScenario uiActionScenario;
     public LoginScenario loginSC;
+    public CheckoutScenario checkSC;
     public static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class.getSimpleName());
     private static String testName = "";
     public BaseController() throws MalformedURLException {
@@ -71,8 +74,11 @@ public class BaseController extends Constants implements ITest{
         uiActionScenario = new WebScenario(getDriver());
         helpers = new SeleniumHelpers(getDriver());
         general = new GeneralModels(getDriver());
-
+        /** page Objects **/
         poLog = new poLoginPage(getDriver());
+        poCheck = new poCheckout(getDriver());
+        /** scenarios **/
+        checkSC = new CheckoutScenario(getDriver());
         loginSC = new LoginScenario(getDriver());
         LOGGER.info("============= BEFORE METHOD =============") ;
     }
