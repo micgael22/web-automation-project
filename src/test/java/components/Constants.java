@@ -2,6 +2,7 @@ package components;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
+import pageObjects.poCheckout;
 import pageObjects.poLoginPage;
 import utilities.GeneralModels;
 import utilities.SeleniumHelpers;
@@ -15,6 +16,7 @@ public class Constants extends TestListener{
     }
     public WebDriver driver;
     public poLoginPage poLog;
+    public poCheckout poCheck;
     public Action uiAction;
     public Duration interval;
     public Duration timeout;
