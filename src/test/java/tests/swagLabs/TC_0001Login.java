@@ -62,5 +62,17 @@ public class TC_0001Login extends BaseController {
         uiAction.executeStep("Verify error message", "VERIFY_ELEMENT_TEXT", poLog.msgError, "Epic sadface: Username and password do not match any user in this service");
     }
 
+    @Description("Steps | Invalid userName")
+    @Severity(SeverityLevel.MINOR)
+    @Story("Swag Labs")
+    @Test(groups = {"Login"},description = "TC_ID=02004 | Verify user unable to login with invalid - username")
+    public void loginInvalidCreds02() throws Exception {
+        uiAction.executeStep("Verify Home page header present", "VERIFY_ELEMENT_TEXT", poLog.headerSwagLabs, "Swag Labs");
+        uiAction.executeStep("User Enter username", "INPUT_TEXT", poLog.inputUsername, "inv@l!dUserN@me");
+        uiAction.executeStep("User Enter password", "INPUT_TEXT", poLog.inputPassword, "secret_sauce");
+        uiAction.executeStep("User click on login button","CLICK",poLog.btnLogin,null);
+        uiAction.executeStep("Wait added","wait",null,"3");
+        uiAction.executeStep("Verify error message", "VERIFY ELEMENT TEXT", poLog.headerSwagLabs, "Epic sadface: Username and password do not match any user in this service");
+    }
 
 }
