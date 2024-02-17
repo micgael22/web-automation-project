@@ -4,6 +4,7 @@ import base.BaseController;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.slf4j.LoggerFactory;
+import pageObjects.poCheckout;
 import pageObjects.poLoginPage;
 import utilities.GeneralModels;
 import utilities.SeleniumHelpers;
@@ -19,6 +20,7 @@ public class WebScenario extends BaseController {
     SeleniumHelpers helpers;
     GeneralModels general;
     LoginScenario loginSC;
+    CheckoutScenario checkSC;
     Properties pUserDetails;
 
     public WebScenario(WebDriver driver) throws MalformedURLException {
@@ -27,17 +29,22 @@ public class WebScenario extends BaseController {
         helpers = new SeleniumHelpers(driver);
         general = new GeneralModels(driver);
         poLog = new poLoginPage(driver);
+        poCheck = new poCheckout(driver);
     }
 
     public void executeScenario(String sScenarioDescription, String sUiScenario, WebElement webelementToUse, String dataToUse) throws IOException {
         SCENARIO_DESCRIPTION = sScenarioDescription;
         loginSC  = new LoginScenario(driver);
+        checkSC = new CheckoutScenario(driver);
 
         LOGGER.info("== START = Executing Scenario :" + sUiScenario + " : " + dataToUse);
         try {
             switch (sUiScenario.toUpperCase()) {
                 case "LOGIN_VALID_CREDS":
                     loginSC.executeLoginCreationStep(dataToUse);
+                    break;
+                case "ADD_ITEMS_TO_CART":
+                    checkSC.checkoutProcess(dataToUse);
                     break;
 
             }
