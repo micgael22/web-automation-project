@@ -16,17 +16,13 @@ public class LoginScenario extends WebScenario {
         LOGGER.get().info("Execute-Login-Creation-Step <<< DATA TO USE >>>" + dataToUse);
         switch (dataToUse.toUpperCase()) {
             case "USER_LOGIN_NAV":
-                helpers.customSetText(poLog.inputEmail, "example@gmail.com");
-                helpers.customSetText(poLog.inputPassword, "qwerty12345");
-                helpers.customClick(poLog.btnSignIn);
-                helpers.customWait("5");
+                helpers.customVerifyElementText(poLog.headerSwagLabs, "Swag Labs");
+                helpers.customSetText(poLog.inputUsername, "standard_user");
+                helpers.customSetText(poLog.inputPassword, "secret_sauce");
+                helpers.customClick(poLog.btnLogin);
+                helpers.customWait("3");
                 break;
-            case "USER_PAGE_SWITCH":
-                helpers.customVerifyElementText(poLog.headerQA, "Automation Practice");
-                helpers.customClick(poLog.linkBigPage);
-                helpers.customWait("5");
-                helpers.customVerifyElementText(poLog.headerSkills, "Skills Improved:");
-                break;
+
         }
     }
 

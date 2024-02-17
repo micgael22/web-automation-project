@@ -29,7 +29,7 @@ public class WebScenario extends BaseController {
         poLog = new poLoginPage(driver);
     }
 
-    public void executescenario(String sScenarioDescription, String sUiScenario, WebElement webelementToUse, String dataToUse) throws IOException {
+    public void executeScenario(String sScenarioDescription, String sUiScenario, WebElement webelementToUse, String dataToUse) throws IOException {
         SCENARIO_DESCRIPTION = sScenarioDescription;
         loginSC  = new LoginScenario(driver);
 
@@ -39,9 +39,7 @@ public class WebScenario extends BaseController {
                 case "LOGIN_VALID_CREDS":
                     loginSC.executeLoginCreationStep(dataToUse);
                     break;
-                case "LOGIN_PAGE_SWITCH":
-                    loginSC.executeLoginCreationStep(dataToUse);
-                    break;
+
             }
 
             LOGGER.info("== END : Executing Scenario : " + sUiScenario + " : " + dataToUse);
