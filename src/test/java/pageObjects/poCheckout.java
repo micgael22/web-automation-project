@@ -23,7 +23,7 @@ public class poCheckout extends Constants {
 
     /** Products locators **/
     @FindBy(css = ".title")
-    public WebElement sectionProducts;
+    public WebElement headerProd;
 
     @FindBy(id = "add-to-cart-sauce-labs-bike-light")
     public WebElement btnAddBike;
@@ -38,7 +38,7 @@ public class poCheckout extends Constants {
     public WebElement iconCart;
 
     /** product details **/
-    @FindBy(id = "#item_4_title_link > .inventory_item_name")
+    @FindBy(css = "#item_4_title_link > .inventory_item_name")
     public WebElement selItemBPack;
 
     @FindBy(css = ".inventory_details_name")
@@ -50,10 +50,23 @@ public class poCheckout extends Constants {
     @FindBy(css = ".inventory_details_img")
     public WebElement itemImg;
 
-    @FindBy(css = ".inventory_details_img")
+    @FindBy(css = "#back-to-products")
     public WebElement btnBack;
 
-    @FindBy(id = "add-to-cart-sauce-labs-backpack")
-    public WebElement btnAddToCart;
+    /** Shopping Cart locators **/
+    @FindBy(css = "#item_3_title_link > .inventory_item_name")
+    public WebElement itemTitle00;
+    @FindBy(id = "remove-test.allthethings()-t-shirt-(red)")
+    public WebElement btnRemove00;
+    @FindBy(css = "#item_4_title_link > .inventory_item_name")
+    public WebElement itemTitle01;
+    @FindBy(id = "remove-sauce-labs-backpack")
+    public WebElement btnRemove01;
+    @FindBy(css = "#item_0_title_link > .inventory_item_name")
+    public WebElement itemTitle02;
+    @FindBy(id = "remove-sauce-labs-bike-light")
+    public WebElement btnRemove02;
+    @FindBy(css = "#continue-shopping")
+    public WebElement btnContShop;
 
 }
