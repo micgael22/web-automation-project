@@ -42,4 +42,24 @@ public class TC_0002Checkout extends BaseController {
         uiAction.executeStep("Verify user directed to /inventory.html","VERIFY_CORRECT_PAGE_URL_CONTAINS",null,"/inventory.html");
 
     }
+
+    @Description("Remove items from cart process")
+    @Severity(SeverityLevel.MINOR)
+    @Story("SWAG LABS")
+    @Test(groups = {"Checkout"}, description = "TC_ID=03002 | Verify user able to remove items from cart")
+    public void checkoutTC_removeItems() throws Exception {
+        uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"user_login_nav");
+        uiActionScenario.executeScenario("User add items to cart","ADD_ITEMS_TO_CART",null,"add_items");
+
+        uiAction.executeStep("Verify (Red T-Shirt) is present", "VERIFY_ELEMENT_TEXT", poCheck.itemTitle00, "Test.allTheThings() T-Shirt (Red)");
+        uiAction.executeStep("User remove item 00","CLICK",poCheck.btnRemove00,null);
+        uiAction.executeStep("Verify (Backpack) is present", "VERIFY_ELEMENT_TEXT", poCheck.itemTitle01, "Sauce Labs Backpack");
+        uiAction.executeStep("User remove item 01","CLICK",poCheck.btnRemove01,null);
+        uiAction.executeStep("Verify (Bike Light ) is present", "VERIFY_ELEMENT_TEXT", poCheck.itemTitle02, "Sauce Labs Bike Light");
+        uiAction.executeStep("User remove item 02","CLICK",poCheck.btnRemove02,null);
+
+        uiAction.executeStep("User click on continue shopping Btn","CLICK",poCheck.btnContShop,null);
+        uiAction.executeStep("Verify user directed to /inventory.html","VERIFY_CORRECT_PAGE_URL_CONTAINS",null,"/inventory.html");
+
+    }
 }
