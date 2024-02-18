@@ -16,7 +16,7 @@ public class CheckoutScenario extends WebScenario{
         LOGGER.get().info("Execute-Checkout-Step <<< DATA TO USE >>>" + dataToUse);
         switch (dataToUse.toUpperCase()) {
             case "ADD_ITEMS":
-                helpers.customVerifyElementText(poCheck.sectionProducts, "Products");
+                helpers.customVerifyElementText(poCheck.headerProd, "Products");
                 helpers.customClick(poCheck.btnAddBike);
                 helpers.customClick(poCheck.btnAddBPack);
                 helpers.scrollToElement(poCheck.btnAddRShirt);
