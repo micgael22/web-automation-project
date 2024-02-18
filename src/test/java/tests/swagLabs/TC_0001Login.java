@@ -17,7 +17,7 @@ public class TC_0001Login extends BaseController {
     @Severity(SeverityLevel.MINOR)
     @Story("SWAG LABS")
     @Test(groups = {"Login"}, description = "TC_ID=02000 | Verify user able to login with valid credentials")
-    public void loginValidCredsScenarios() throws Exception {
+    public void loginTC_ValidCredsScenarios() throws Exception {
         uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"user_login_nav");
         uiAction.executeStep("Verify page directed to /inventory.html","VERIFY_CORRECT_PAGE_URL_CONTAINS",null,"/inventory.html");
     }
@@ -26,7 +26,7 @@ public class TC_0001Login extends BaseController {
     @Severity(SeverityLevel.MINOR)
     @Story("SWAG LABS")
     @Test(groups = {"Login"}, description = "TC_ID=02001 | Verify user able to login with valid credentials")
-    public void loginValidCreds() throws Exception {
+    public void loginTC_ValidCreds() throws Exception {
         uiAction.executeStep("Verify Home page header present", "VERIFY_ELEMENT_TEXT", poLog.headerSwagLabs, "Swag Labs");
         uiAction.executeStep("User Enter username", "INPUT_TEXT", poLog.inputUsername, "standard_user");
         uiAction.executeStep("User Enter password", "INPUT_TEXT", poLog.inputPassword, "secret_sauce");
@@ -39,7 +39,7 @@ public class TC_0001Login extends BaseController {
     @Severity(SeverityLevel.MINOR)
     @Story("Swag Labs")
     @Test(groups = {"Login"},description = "TC_ID=02002 | Verify user unable to login with invalid credentials")
-    public void loginInvalidCreds00() throws Exception {
+    public void loginTC_InvalidCreds() throws Exception {
         uiAction.executeStep("Verify Home page header present", "VERIFY_ELEMENT_TEXT", poLog.headerSwagLabs, "Swag Labs");
         uiAction.executeStep("User Enter username", "INPUT_TEXT", poLog.inputUsername, "inv@alidUs3rName");
         uiAction.executeStep("User Enter password", "INPUT_TEXT", poLog.inputPassword, "f@a!lp@ssw0rd");
@@ -53,7 +53,7 @@ public class TC_0001Login extends BaseController {
     @Severity(SeverityLevel.MINOR)
     @Story("Swag Labs")
     @Test(groups = {"Login"},description = "TC_ID=02003 | Verify user unable to login with invalid - password")
-    public void loginInvalidCreds01() throws Exception {
+    public void loginTC_InvalidPwd() throws Exception {
         uiAction.executeStep("Verify Home page header present", "VERIFY_ELEMENT_TEXT", poLog.headerSwagLabs, "Swag Labs");
         uiAction.executeStep("User Enter username", "INPUT_TEXT", poLog.inputUsername, "standard_user");
         uiAction.executeStep("User Enter password", "INPUT_TEXT", poLog.inputPassword, "f@a!lp@ssw0rd");
@@ -66,7 +66,7 @@ public class TC_0001Login extends BaseController {
     @Severity(SeverityLevel.MINOR)
     @Story("Swag Labs")
     @Test(groups = {"Login"},description = "TC_ID=02004 | Verify user unable to login with invalid - username")
-    public void loginInvalidCreds02() throws Exception {
+    public void loginIC_InvalidUsrName() throws Exception {
         uiAction.executeStep("Verify Home page header present", "VERIFY_ELEMENT_TEXT", poLog.headerSwagLabs, "Swag Labs");
         uiAction.executeStep("User Enter username", "INPUT_TEXT", poLog.inputUsername, "inv@l!dUserN@me");
         uiAction.executeStep("User Enter password", "INPUT_TEXT", poLog.inputPassword, "secret_sauce");
