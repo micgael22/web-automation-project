@@ -21,7 +21,7 @@ public class TC_0002Checkout extends BaseController {
         uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"user_login_nav");
         uiAction.executeStep("Verify user directed to /inventory.html","VERIFY_CORRECT_PAGE_URL_CONTAINS",null,"/inventory.html");
 
-        uiActionScenario.executeScenario("User add items to cart","ADD_ITEMS_TO_CART",null,"add_items");
+        uiActionScenario.executeScenario("User add items to cart","CHECKOUT_NAVIGATION",null,"add_items");
         uiAction.executeStep("Verify user directed to /cart.html","VERIFY_CORRECT_PAGE_URL_CONTAINS",null,"/cart.html");
 
     }
@@ -49,7 +49,7 @@ public class TC_0002Checkout extends BaseController {
     @Test(groups = {"Checkout"}, description = "TC_ID=03002 | Verify user able to remove items from cart")
     public void checkoutTC_removeItems() throws Exception {
         uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"user_login_nav");
-        uiActionScenario.executeScenario("User add items to cart","ADD_ITEMS_TO_CART",null,"add_items");
+        uiActionScenario.executeScenario("User add items to cart","CHECKOUT_NAVIGATION",null,"add_items");
 
         uiAction.executeStep("Verify (Red T-Shirt) is present", "VERIFY_ELEMENT_TEXT", poCheck.itemTitle00, "Test.allTheThings() T-Shirt (Red)");
         uiAction.executeStep("User remove item 00","CLICK",poCheck.btnRemove00,null);
@@ -62,4 +62,34 @@ public class TC_0002Checkout extends BaseController {
         uiAction.executeStep("Verify user directed to /inventory.html","VERIFY_CORRECT_PAGE_URL_CONTAINS",null,"/inventory.html");
 
     }
+
+    @Description("Overview before checkout")
+    @Severity(SeverityLevel.MINOR)
+    @Story("SWAG LABS")
+    @Test(groups = {"Checkout"}, description = "TC_ID=03002 | Verify user able to overview information before checkout")
+    public void checkoutTC_overview() throws Exception {
+        uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"user_login_nav");
+        uiActionScenario.executeScenario("User add items to cart","CHECKOUT_NAVIGATION",null,"add_items");
+        uiActionScenario.executeScenario("Verify items are added to cart","CHECKOUT_NAVIGATION",null,"verify_cart_items");
+        uiActionScenario.executeScenario("User able to enter personal information","CHECKOUT_NAVIGATION",null,"enter_user_details");
+
+        uiAction.executeStep("Verify user directed to /checkout-step-two","VERIFY_CORRECT_PAGE_URL_CONTAINS",null,"/checkout-step-two.html");
+        uiActionScenario.executeScenario("User able to overview - checkout information","CHECKOUT_NAVIGATION",null,"overview_checkout");
+    }
+
+    @Description("User complete order")
+    @Severity(SeverityLevel.MINOR)
+    @Story("SWAG LABS")
+    @Test(groups = {"Checkout"}, description = "TC_ID=03002 | Verify user able to place order successfully")
+    public void checkoutTC_completeOrder() throws Exception {
+        uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"user_login_nav");
+        uiActionScenario.executeScenario("User add items to cart","CHECKOUT_NAVIGATION",null,"add_items");
+        uiActionScenario.executeScenario("Verify items are added to cart","CHECKOUT_NAVIGATION",null,"verify_cart_items");
+        uiActionScenario.executeScenario("User able to enter personal information","CHECKOUT_NAVIGATION",null,"enter_user_details");
+
+        uiAction.executeStep("Verify user directed to /checkout-step-two","VERIFY_CORRECT_PAGE_URL_CONTAINS",null,"/checkout-step-two.html");
+        uiActionScenario.executeScenario("User able to overview - checkout information","CHECKOUT_NAVIGATION",null,"overview_checkout");
+        uiActionScenario.executeScenario("User able to checkout items successfully","CHECKOUT_NAVIGATION",null,"complete_order");
+    }
+
 }
