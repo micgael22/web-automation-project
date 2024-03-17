@@ -43,7 +43,7 @@ public class WebScenario extends BaseController {
                 case "LOGIN_VALID_CREDS":
                     loginSC.executeLoginCreationStep(dataToUse);
                     break;
-                case "ADD_ITEMS_TO_CART":
+                case "CHECKOUT_NAVIGATION":
                     checkSC.checkoutProcess(dataToUse);
                     break;
 
