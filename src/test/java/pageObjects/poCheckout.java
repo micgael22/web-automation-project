@@ -54,6 +54,8 @@ public class poCheckout extends Constants {
     public WebElement btnBack;
 
     /** Shopping Cart locators **/
+    @FindBy(css = ".title")
+    public WebElement titleCart;
     @FindBy(css = "#item_3_title_link > .inventory_item_name")
     public WebElement itemTitle00;
     @FindBy(id = "remove-test.allthethings()-t-shirt-(red)")
@@ -68,5 +70,43 @@ public class poCheckout extends Constants {
     public WebElement btnRemove02;
     @FindBy(css = "#continue-shopping")
     public WebElement btnContShop;
+    @FindBy(css = "#checkout")
+    public WebElement btnCheckout;
+
+    /** Customer Information locators **/
+    @FindBy(css = ".title")
+    public WebElement titleInformation;
+    @FindBy(css = "#first-name")
+    public WebElement inputFirstname;
+    @FindBy(css = "#last-name")
+    public WebElement inputLastname;
+    @FindBy(css = "#postal-code")
+    public WebElement inputZipCode;
+    @FindBy(css = "#continue")
+    public WebElement btnContinue;
+
+    /** Overview Information locators **/
+    @FindBy(css = ".title")
+    public WebElement titleOverview;
+    @FindBy(css = ".summary_info_label:nth-child(1)")
+    public WebElement lblPayment;
+    @FindBy(css = ".summary_info_label:nth-child(3)")
+    public WebElement lblShipping;
+    @FindBy(css = ".summary_info_label:nth-child(5)")
+    public WebElement lblPrice;
+    @FindBy(css = ".summary_tax_label")
+    public WebElement lblTaxAmount;
+    @FindBy(css = ".summary_tax_label")
+    public WebElement totalAmount;
+    @FindBy(css = "#finish")
+    public WebElement btnFinish;
+
+    /** Success Checkout locators **/
+    @FindBy(css = ".complete-header")
+    public WebElement h1Success;
+    @FindBy(css = ".complete-text")
+    public WebElement txtSuccess;
+    @FindBy(css = ".complete-header")
+    public WebElement btnBackProducts;
 
 }
