@@ -8,6 +8,9 @@ import utilities.GeneralModels;
 import utilities.SeleniumHelpers;
 import java.net.MalformedURLException;
 import java.time.Duration;
+import java.util.Properties;
+
+import static base.BaseResources.*;
 
 public class Constants extends TestListener{
 
@@ -28,8 +31,13 @@ public class Constants extends TestListener{
     public static String TARGET ;
     public FluentWait<? extends WebDriver> verificationWait;
 
-    //    public static Properties prop;
-//     SCREENSHOT / REPORT PATH
+    /** users properties path **/
+    public static Properties prop;
+    public String SL_USER_DETAILS_00 = swagLabUser00().toAbsolutePath().toString();
+    public String SL_USER_DETAILS_01 = swagLabUser01().toAbsolutePath().toString();
+    public String SL_USER_DETAILS_02 = swagLabUser02().toAbsolutePath().toString();
+
+    //     SCREENSHOT / REPORT PATH
     public static String PATH_USER_DIR = System.getProperty("user.dir");
     public static String FILEPATHSEPARATOR = System.getProperty("file.separator");
     public  String PATH_TO_REPORTS = "src" + FILEPATHSEPARATOR + "test"
