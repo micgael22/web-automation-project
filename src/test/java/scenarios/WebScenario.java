@@ -21,7 +21,7 @@ public class WebScenario extends BaseController {
     GeneralModels general;
     LoginScenario loginSC;
     CheckoutScenario checkSC;
-    Properties pUserDetails;
+    Properties propUserDetails;
 
     public WebScenario(WebDriver driver) throws MalformedURLException {
         super();
@@ -40,8 +40,11 @@ public class WebScenario extends BaseController {
         LOGGER.info("== START = Executing Scenario :" + sUiScenario + " : " + dataToUse);
         try {
             switch (sUiScenario.toUpperCase()) {
-                case "LOGIN_VALID_CREDS":
+                case "LOGIN_INVALID_CREDS":
                     loginSC.executeLoginCreationStep(dataToUse);
+                    break;
+                case "LOGIN_VALID_CREDS":
+                    loginSC.loginWithValidCreds(dataToUse);
                     break;
                 case "CHECKOUT_NAVIGATION":
                     checkSC.checkoutProcess(dataToUse);
