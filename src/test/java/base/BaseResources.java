@@ -1,5 +1,6 @@
 package base;
 
+import components.Constants;
 import org.openqa.selenium.WebDriver;
 import utilities.GeneralModels;
 
@@ -14,18 +15,21 @@ public class BaseResources extends GeneralModels {
 
     public static String FILEPATHSEPARATOR = System.getProperty("file.separator");
 
-
      //GET DATA FROM PROPERTIES FILE
-    public static Path propUserLoginDetails(String dataToUse){
-        return resourcePathToLocalPath("properties" + FILEPATHSEPARATOR + dataToUse + "ttt.properties");
+     public static Path swagLabUser(String dataToUse){
+         return resourcePathToLocalPath("properties" + Constants.FILEPATHSEPARATOR + dataToUse + ".properties");
+     }
+
+    public static Path swagLabUser00(){
+        return resourcePathToLocalPath("properties" + FILEPATHSEPARATOR + "/creds.swaglab.user00.properties");
     }
 
-    public static Path propUserB(){
-        return resourcePathToLocalPath("properties" + FILEPATHSEPARATOR + "ttt.properties");
+    public static Path swagLabUser01(){
+        return resourcePathToLocalPath("properties" + FILEPATHSEPARATOR + "/creds.swaglab.user01.properties");
     }
 
-    public static Path propBusinessUserA(){
-        return resourcePathToLocalPath("properties" + FILEPATHSEPARATOR + "ttt.properties");
+    public static Path swagLabUser02(){
+        return resourcePathToLocalPath("properties" + FILEPATHSEPARATOR + "/creds.swaglab.user02.properties");
     }
 
 

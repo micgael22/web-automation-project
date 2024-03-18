@@ -9,7 +9,6 @@ public class BaseConfiguration extends BaseController {
 
     public BaseConfiguration() throws MalformedURLException {
     }
-    public static Properties prop;
 
     public static Properties setCustomProperties(String sPath){
         try {
