@@ -1,5 +1,6 @@
 package tests.swagLabs;
 
+import base.BaseConfiguration;
 import base.BaseController;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
@@ -8,9 +9,17 @@ import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
+import java.util.Properties;
+
+import static base.BaseResources.swagLabUser;
 
 public class TC_0001Login extends BaseController {
+
+    Properties propUserDetails;
+
     public TC_0001Login() throws MalformedURLException {
+        propUserDetails = BaseConfiguration.setCustomProperties(swagLabUser("creds.swaglab.user00").toAbsolutePath().toString());
+
     }
 
     @Description("Scenario | Valid credentials")
@@ -18,7 +27,7 @@ public class TC_0001Login extends BaseController {
     @Story("SWAG LABS")
     @Test(groups = {"Login"}, description = "TC_ID=02000 | Verify user able to login with valid credentials")
     public void loginTC_ValidCredsScenarios() throws Exception {
-        uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"user_login_nav");
+        uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"swaglab.user00");
         uiAction.executeStep("Verify page directed to /inventory.html","VERIFY_CORRECT_PAGE_URL_CONTAINS",null,"/inventory.html");
     }
 
