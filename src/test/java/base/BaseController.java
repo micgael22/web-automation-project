@@ -3,6 +3,7 @@ package base;
 import components.Action;
 import components.Constants;
 import driver.DriverFactory;
+import io.qameta.allure.Allure;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -11,11 +12,11 @@ import org.testng.ITest;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import pageObjects.poCheckout;
-import pageObjects.poLoginPage;
-import scenarios.CheckoutScenario;
+import pageObjects.swaglabs.poCheckout;
+import pageObjects.swaglabs.poLogin;
+import scenarios.CheckoutScenario_SL;
 import scenarios.WebScenario;
-import scenarios.LoginScenario;
+import scenarios.LoginScenario_SL;
 import utilities.GeneralModels;
 import utilities.SeleniumHelpers;
 
@@ -25,8 +26,8 @@ import java.time.Duration;
 
 public class BaseController extends Constants implements ITest{
     public WebScenario uiActionScenario;
-    public LoginScenario loginSC;
-    public CheckoutScenario checkSC;
+    public LoginScenario_SL loginSC;
+    public CheckoutScenario_SL checkSC;
     public static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class.getSimpleName());
     private static String testName = "";
     public BaseController() throws MalformedURLException {
@@ -75,11 +76,13 @@ public class BaseController extends Constants implements ITest{
         helpers = new SeleniumHelpers(getDriver());
         general = new GeneralModels(getDriver());
         /** page Objects **/
-        poLog = new poLoginPage(getDriver());
+        poLog = new poLogin(getDriver());
         poCheck = new poCheckout(getDriver());
         /** scenarios **/
-        checkSC = new CheckoutScenario(getDriver());
-        loginSC = new LoginScenario(getDriver());
+        checkSC = new CheckoutScenario_SL(getDriver());
+        loginSC = new LoginScenario_SL(getDriver());
+        Allure.addAttachment("ProjectBaseExecution : ", general.takeScreenshot("BEFOREMETHOD"));
+
         LOGGER.info("============= BEFORE METHOD =============") ;
     }
 

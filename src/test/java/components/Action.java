@@ -1,5 +1,6 @@
 package components;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -75,14 +76,24 @@ public class Action extends Constants{
             }
             // EXCEPTIONS ON ACTION
             try {
-                LOGGER.get().info("====== STEP PASSED  : " + stepActionDesc + " COMPLETED SUCCESSFULLY!! ======");
-            } catch (Exception e) {
-                LOGGER.get().info("====== STEP FAILED : " + stepActionDesc + " COMPLETED UNSUCCESSFULLY!! ======");
+                LOGGER.get().info(" ====== STEP PASSED  : " + stepActionDesc + " COMPLETED SUCCESSFULLY!! ====== ");
+            }
+            catch (Exception e) {
+                LOGGER.get().info(" ====== STEP FAILED : " + stepActionDesc + " COMPLETED UNSUCCESSFULLY!! ====== ");
                 driver.quit();
+                try{
+                    Allure.addAttachment("Step Failed : " + stepActionDesc,  general.takeScreenshot(stepActionDesc));
+                    LOGGER.get().info(" ====== LOG: UNKNOWN getCause ERROR \n : '" + e.getCause() +" ' ====== ");
+                    LOGGER.get().info(" ====== LOG: UNKNOWN getStackTrace ERROR \n : '" + e.getStackTrace() +" ' ====== ");
+                    LOGGER.get().info(" ====== LOG: UNKNOWN getLocalizedMessage ERROR \n : '" + e.getLocalizedMessage() +" ' ====== ");
+                }
+                catch (Exception exc){
+                    LOGGER.get().info(" ====== LOG : UNABLE to take - SNAPSHOT \n" + exc.getMessage());
+                }
             }
         } catch (Exception e) {
-            LOGGER.get().info("====== STEP FAILED : " + stepActionDesc + " COMPLETED UNSUCCESSFULLY!! ======");
-            LOGGER.get().info("====== LOG: UNKNOWN getCause ERROR \n : '" + e.getCause().getMessage() +"'======");
+            LOGGER.get().info(" ====== STEP FAILED : " + stepActionDesc + " COMPLETED UNSUCCESSFULLY !! ====== ");
+            LOGGER.get().info(" ====== LOG: UNKNOWN getCause ERROR \n : '" + e.getCause().getMessage() +"' ====== ");
             helpers.assertfailure(e, webelementToUse);
             driver.quit();
         }

@@ -2,8 +2,8 @@ package components;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
-import pageObjects.poCheckout;
-import pageObjects.poLoginPage;
+import pageObjects.swaglabs.poCheckout;
+import pageObjects.swaglabs.poLogin;
 import utilities.GeneralModels;
 import utilities.SeleniumHelpers;
 import java.net.MalformedURLException;
@@ -18,7 +18,7 @@ public class Constants extends TestListener{
         super();
     }
     public WebDriver driver;
-    public poLoginPage poLog;
+    public poLogin poLog;
     public poCheckout poCheck;
     public Action uiAction;
     public Duration interval;
@@ -40,7 +40,9 @@ public class Constants extends TestListener{
     //     SCREENSHOT / REPORT PATH
     public static String PATH_USER_DIR = System.getProperty("user.dir");
     public static String FILEPATHSEPARATOR = System.getProperty("file.separator");
-    public  String PATH_TO_REPORTS = "src" + FILEPATHSEPARATOR + "test"
-            + FILEPATHSEPARATOR + "resources" + FILEPATHSEPARATOR + "reports" + FILEPATHSEPARATOR;
+    public  String PATH_TO_REPORTS = "src" + FILEPATHSEPARATOR +
+                                    "test" + FILEPATHSEPARATOR +
+                                    "resources" + FILEPATHSEPARATOR +
+                                    "reports" + FILEPATHSEPARATOR;
 
 }

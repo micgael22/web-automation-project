@@ -38,8 +38,8 @@ public class GeneralModels extends Constants {
 
     // SCREENSHOT ACTION
     public InputStream takeScreenshot(String sActionStepDescription) throws IOException {
-        TakesScreenshot scrShot =((TakesScreenshot)this.driver);
-        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+        TakesScreenshot screenShot = ((TakesScreenshot)this.driver);
+        File SrcFile = screenShot.getScreenshotAs(OutputType.FILE);
         // ADD PATH & AND PROJECT NAME AND FILE PATH SEPARATOR
         String path = PATH_TO_REPORTS + PROJECTNAME.toLowerCase() + FILEPATHSEPARATOR;
         String fileType = ".png";
