@@ -13,9 +13,13 @@
 
     <test name="SWAG LABS">
         <classes>
-            <class name="tests.swagLabs.TC_0001Login">
+            <class name="tests.swagLabs.TC_0002Checkout">
                 <methods>
-                    <include name="loginInvalidCreds"/>
+                    <include name="checkoutTC_completeOrder"/>
+<!--                    <include name="clickable_button_fail"/>-->
+<!--                    <include name="verify_url_fail"/>-->
+<!--                    <include name="loginTC_InvalidPwd"/>-->
+<!--                    <include name="loginIC_InvalidUsrName"/>-->
                 </methods>
             </class>
         </classes>

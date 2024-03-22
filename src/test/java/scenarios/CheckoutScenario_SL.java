@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import java.net.MalformedURLException;
 import java.util.logging.Logger;
 
-public class CheckoutScenario extends WebScenario{
+public class CheckoutScenario_SL extends WebScenario{
     private static final ThreadLocal<Logger> LOGGER = ThreadLocal.withInitial(() -> Logger.getLogger(TestListener.class.getName()));
-    public CheckoutScenario(WebDriver driver) throws MalformedURLException {
+    public CheckoutScenario_SL(WebDriver driver) throws MalformedURLException {
         super(driver);
         this.driver = driver;
     }

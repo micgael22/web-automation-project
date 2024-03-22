@@ -2,6 +2,7 @@ package components;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
+import pageObjects.orangeHRM.poOnboard;
 import pageObjects.swaglabs.poCheckout;
 import pageObjects.swaglabs.poLogin;
 import utilities.GeneralModels;
@@ -20,6 +21,7 @@ public class Constants extends TestListener{
     public WebDriver driver;
     public poLogin poLog;
     public poCheckout poCheck;
+    public poOnboard poOnbrd;
     public Action uiAction;
     public Duration interval;
     public Duration timeout;

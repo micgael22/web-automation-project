@@ -12,9 +12,11 @@ import org.testng.ITest;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import pageObjects.orangeHRM.poOnboard;
 import pageObjects.swaglabs.poCheckout;
 import pageObjects.swaglabs.poLogin;
 import scenarios.CheckoutScenario_SL;
+import scenarios.OnboardScenario_HRM;
 import scenarios.WebScenario;
 import scenarios.LoginScenario_SL;
 import utilities.GeneralModels;
@@ -27,6 +29,7 @@ import java.time.Duration;
 public class BaseController extends Constants implements ITest{
     public WebScenario uiActionScenario;
     public LoginScenario_SL loginSC;
+    public OnboardScenario_HRM onboardSC;
     public CheckoutScenario_SL checkSC;
     public static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class.getSimpleName());
     private static String testName = "";
@@ -48,9 +51,9 @@ public class BaseController extends Constants implements ITest{
         if(iContext.getCurrentXmlTest().getClasses().toString().toLowerCase().contains("swaglabs") && TARGET == null || BASEURL == null){
             PROJECTNAME = "SWAGLABS";
             BASEURL = "https://www.saucedemo.com";
-        }else if(iContext.getCurrentXmlTest().getClasses().toString().toLowerCase().contains("ultimateqa")){
-            PROJECTNAME = "ULTIMATEQA";
-            BASEURL = "https://ultimateqa.com/automation";
+        }else if(iContext.getCurrentXmlTest().getClasses().toString().toLowerCase().contains("orangehrm")){
+            PROJECTNAME = "ORANGEHRM";
+            BASEURL = "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
         }
         LOGGER.info("============= BEFORE TEST =============") ;
     }
@@ -78,9 +81,11 @@ public class BaseController extends Constants implements ITest{
         /** page Objects **/
         poLog = new poLogin(getDriver());
         poCheck = new poCheckout(getDriver());
+        poOnbrd = new poOnboard(getDriver());
         /** scenarios **/
         checkSC = new CheckoutScenario_SL(getDriver());
         loginSC = new LoginScenario_SL(getDriver());
+        onboardSC = new OnboardScenario_HRM(getDriver());
         Allure.addAttachment("ProjectBaseExecution : ", general.takeScreenshot("BEFOREMETHOD"));
 
         LOGGER.info("============= BEFORE METHOD =============") ;

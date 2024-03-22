@@ -4,8 +4,9 @@ import base.BaseController;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.slf4j.LoggerFactory;
-import pageObjects.poCheckout;
-import pageObjects.poLoginPage;
+import pageObjects.orangeHRM.poOnboard;
+import pageObjects.swaglabs.poCheckout;
+import pageObjects.swaglabs.poLogin;
 import utilities.GeneralModels;
 import utilities.SeleniumHelpers;
 
@@ -19,8 +20,9 @@ public class WebScenario extends BaseController {
 
     SeleniumHelpers helpers;
     GeneralModels general;
-    LoginScenario loginSC;
-    CheckoutScenario checkSC;
+    LoginScenario_SL loginSC;
+    CheckoutScenario_SL checkSC;
+    OnboardScenario_HRM onboardSC;
     Properties propUserDetails;
 
     public WebScenario(WebDriver driver) throws MalformedURLException {
@@ -28,14 +30,16 @@ public class WebScenario extends BaseController {
         this.driver = driver;
         helpers = new SeleniumHelpers(driver);
         general = new GeneralModels(driver);
-        poLog = new poLoginPage(driver);
+        poLog = new poLogin(driver);
         poCheck = new poCheckout(driver);
+        poOnbrd = new poOnboard(driver);
     }
 
     public void executeScenario(String sScenarioDescription, String sUiScenario, WebElement webelementToUse, String dataToUse) throws IOException {
         SCENARIO_DESCRIPTION = sScenarioDescription;
-        loginSC  = new LoginScenario(driver);
-        checkSC = new CheckoutScenario(driver);
+        loginSC  = new LoginScenario_SL(driver);
+        checkSC = new CheckoutScenario_SL(driver);
+        onboardSC = new OnboardScenario_HRM(driver);
 
         LOGGER.info("== START = Executing Scenario :" + sUiScenario + " : " + dataToUse);
         try {

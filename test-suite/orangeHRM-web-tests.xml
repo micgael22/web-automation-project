@@ -5,10 +5,10 @@
     <listeners>
         <listener class-name="components.TestListener"/>
     </listeners>
-    <parameter name="WEB_URL" value="https://ultimateqa.com/automation"/>
+    <parameter name="WEB_URL" value="https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"/>
     <parameter name="TARGET" value="LOCAL"/>
     <parameter name="BROWSER_TYPE" value="CHROME"/>
-    <parameter name="WEB_NAME" value="ULTIMATEQA"/>
+    <parameter name="WEB_NAME" value="ORANGEHRM"/>
     <parameter name="ENVIRONMENT" value="TESTS"/>
 
     <test name="ULTIMATE QA">

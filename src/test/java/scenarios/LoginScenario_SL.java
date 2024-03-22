@@ -7,9 +7,9 @@ import java.net.MalformedURLException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-public class LoginScenario extends WebScenario {
+public class LoginScenario_SL extends WebScenario {
     private static final ThreadLocal<Logger> LOGGER = ThreadLocal.withInitial(() -> Logger.getLogger(TestListener.class.getName()));
-    public LoginScenario(WebDriver driver) throws MalformedURLException {
+    public LoginScenario_SL(WebDriver driver) throws MalformedURLException {
         super(driver);
         this.driver = driver;
     }

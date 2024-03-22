@@ -22,7 +22,7 @@ public class TC_0002Checkout extends BaseController {
     }
     @Description("Item to cart process")
     @Severity(SeverityLevel.MINOR)
-    @Story("SWAG LABS")
+    @Story("Swag Labs")
     @Test(groups = {"Checkout"}, description = "TC_ID=03000 | Verify user able add items to cart")
     public void checkoutTC_AddItems() throws Exception {
         uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"swaglab.user00");
@@ -34,7 +34,7 @@ public class TC_0002Checkout extends BaseController {
 
     @Description("Item details process")
     @Severity(SeverityLevel.MINOR)
-    @Story("SWAG LABS")
+    @Story("Swag Labs")
     @Test(groups = {"Checkout"}, description = "TC_ID=03001 | Verify user able to see item to details")
     public void checkoutTC_ItemDetails() throws Exception {
         uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"swaglab.user00");
@@ -50,7 +50,7 @@ public class TC_0002Checkout extends BaseController {
 
     @Description("Remove items from cart process")
     @Severity(SeverityLevel.MINOR)
-    @Story("SWAG LABS")
+    @Story("Swag Labs")
     @Test(groups = {"Checkout"}, description = "TC_ID=03002 | Verify user able to remove items from cart")
     public void checkoutTC_removeItems() throws Exception {
         uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"swaglab.user00");
@@ -70,8 +70,8 @@ public class TC_0002Checkout extends BaseController {
 
     @Description("Overview before checkout")
     @Severity(SeverityLevel.MINOR)
-    @Story("SWAG LABS")
-    @Test(groups = {"Checkout"}, description = "TC_ID=03002 | Verify user able to overview information before checkout")
+    @Story("Swag Labs")
+    @Test(groups = {"Checkout"}, description = "TC_ID=03003 | Verify user able to overview information before checkout")
     public void checkoutTC_overview() throws Exception {
         uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"swaglab.user00");
         uiActionScenario.executeScenario("User add items to cart","CHECKOUT_NAVIGATION",null,"add_items");
@@ -84,8 +84,8 @@ public class TC_0002Checkout extends BaseController {
 
     @Description("User complete order")
     @Severity(SeverityLevel.MINOR)
-    @Story("SWAG LABS")
-    @Test(groups = {"Checkout"}, description = "TC_ID=03002 | Verify user able to place order successfully")
+    @Story("Swag Labs")
+    @Test(groups = {"Checkout"}, description = "TC_ID=03004 | Verify user able to place order successfully")
     public void checkoutTC_completeOrder() throws Exception {
         uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"swaglab.user00");
         uiActionScenario.executeScenario("User add items to cart","CHECKOUT_NAVIGATION",null,"add_items");

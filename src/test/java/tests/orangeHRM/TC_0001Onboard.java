@@ -1,4 +1,4 @@
-package tests.ultimateQA;
+package tests.orangeHRM;
 
 public class TC_0001Onboard {
 }

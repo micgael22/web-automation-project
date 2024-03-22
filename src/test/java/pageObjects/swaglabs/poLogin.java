@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.swaglabs;
 
 import components.Constants;
 import org.openqa.selenium.WebDriver;
@@ -10,10 +10,10 @@ import utilities.SeleniumHelpers;
 
 import java.net.MalformedURLException;
 
-public class poLoginPage extends Constants {
+public class poLogin extends Constants {
 
     private int timeout = 10;
-    public poLoginPage(WebDriver driver) throws MalformedURLException {
+    public poLogin(WebDriver driver) throws MalformedURLException {
         super();
         this.driver = driver;
         PageFactory.initElements(this.driver, this);

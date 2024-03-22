@@ -24,7 +24,7 @@ public class TC_0001Login extends BaseController {
 
     @Description("Scenario | Valid credentials")
     @Severity(SeverityLevel.MINOR)
-    @Story("SWAG LABS")
+    @Story("Swag Labs")
     @Test(groups = {"Login"}, description = "TC_ID=02000 | Verify user able to login with valid credentials")
     public void loginTC_ValidCredsScenarios() throws Exception {
         uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_CREDS",null,"swaglab.user00");
@@ -33,7 +33,7 @@ public class TC_0001Login extends BaseController {
 
     @Description("Steps | Valid credentials")
     @Severity(SeverityLevel.MINOR)
-    @Story("SWAG LABS")
+    @Story("Swag Labs")
     @Test(groups = {"Login"}, description = "TC_ID=02001 | Verify user able to login with valid credentials")
     public void loginTC_ValidCreds() throws Exception {
         uiAction.executeStep("Verify Home page header present", "VERIFY_ELEMENT_TEXT", poLog.headerSwagLabs, "Swag Labs");
