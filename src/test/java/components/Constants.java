@@ -38,6 +38,9 @@ public class Constants extends TestListener{
     public String SL_USER_DETAILS_00 = swagLabUser00().toAbsolutePath().toString();
     public String SL_USER_DETAILS_01 = swagLabUser01().toAbsolutePath().toString();
     public String SL_USER_DETAILS_02 = swagLabUser02().toAbsolutePath().toString();
+    // HRM
+    public String HRM_USER_DETAILS_00 = hrmUser00().toAbsolutePath().toString();
+    public String HRM_USER_DETAILS_01 = hrmUser01().toAbsolutePath().toString();
 
     //     SCREENSHOT / REPORT PATH
     public static String PATH_USER_DIR = System.getProperty("user.dir");
