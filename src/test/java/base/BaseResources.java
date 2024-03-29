@@ -32,6 +32,14 @@ public class BaseResources extends GeneralModels {
         return resourcePathToLocalPath("properties" + FILEPATHSEPARATOR + "/creds.swaglab.user02.properties");
     }
 
+    public static Path hrmUser00(){
+        return resourcePathToLocalPath("properties" + FILEPATHSEPARATOR + "/creds.hrm.user00.properties");
+    }
+
+    public static Path hrmUser01(){
+        return resourcePathToLocalPath("properties" + FILEPATHSEPARATOR + "/creds.hrm.user01.properties");
+    }
+
 
 
 
