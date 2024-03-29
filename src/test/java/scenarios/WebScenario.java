@@ -53,7 +53,15 @@ public class WebScenario extends BaseController {
                 case "CHECKOUT_NAVIGATION":
                     checkSC.checkoutProcess(dataToUse);
                     break;
-
+                case "LOGIN_INVALID_HRM":
+                    onboardSC.loginInvalidCreds(dataToUse);
+                    break;
+                case "LOGIN_VALID_HRM":
+                    onboardSC.loginValidCreds(dataToUse);
+                    break;
+                case "ONBOARD_HRM":
+                    onboardSC.onboardProcess(dataToUse);
+                    break;
             }
 
             LOGGER.info("== END : Executing Scenario : " + sUiScenario + " : " + dataToUse);
