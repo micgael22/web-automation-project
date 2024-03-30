@@ -1,6 +1,5 @@
 package tests.orangeHRM;
 
-import base.BaseConfiguration;
 import base.BaseController;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
@@ -8,15 +7,10 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 import java.net.MalformedURLException;
-import java.util.Properties;
-
-import static base.BaseResources.swagLabUser;
 
 public class TC_0001_Onboard extends BaseController {
 
-    Properties propUserDetails;
     public TC_0001_Onboard() throws MalformedURLException {
-        propUserDetails = BaseConfiguration.setCustomProperties(swagLabUser("creds.swaglab.user00").toAbsolutePath().toString());
     }
 
     @Description("Valid credentials")
