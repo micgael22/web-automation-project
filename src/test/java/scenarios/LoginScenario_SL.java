@@ -15,7 +15,7 @@ public class LoginScenario_SL extends WebScenario {
     }
 
     public void executeLoginCreationStep(String dataToUse) throws Exception {
-        LOGGER.get().info("Execute-Login-Creation-Step <<< DATA TO USE >>>" + dataToUse);
+        LOGGER.get().info("Execute-Login-Steps <<< DATA TO USE >>>" + dataToUse);
         switch (dataToUse.toUpperCase()) {
             case "USER_INVALID_LOGIN_NAV":
                 helpers.customVerifyElementText(poLog.headerSwagLabs, "Swag Labs");

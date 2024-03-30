@@ -17,7 +17,7 @@ public class OnboardScenario_HRM extends WebScenario{
     }
 
     public void onboardProcess(String dataToUse) throws Exception {
-        LOGGER.get().info("Execute-Checkout-Step <<< DATA TO USE >>>" + dataToUse);
+        LOGGER.get().info("Execute-Onboard-Steps <<< DATA TO USE >>>" + dataToUse);
         switch (dataToUse.toUpperCase()) {
             case "FORGOT_PASSWORD":
                 helpers.customVerifyElementPresent(poOnbrd.linkForgotPwd);
@@ -26,9 +26,6 @@ public class OnboardScenario_HRM extends WebScenario{
                 helpers.customSetText(poOnbrd.inputResetUsername, "GENERATED NAME");
                 helpers.customClick(poOnbrd.btnResetPwd);
                 helpers.customVerifyElementText(poOnbrd.headerSuccess, "Reset Password link sent successfully");
-
-//                helpers.verifyPageUrl("/sendPasswordReset");
-//                // https://opensource-demo.orangehrmlive.com/web/index.php/auth/requestPasswordResetCode
                 break;
 
         }
@@ -39,6 +36,7 @@ public class OnboardScenario_HRM extends WebScenario{
         try {
             propUserDetails = getUserDetailsFromPropertiesFile(dataToUse);
             helpers.customVerifyElementPresent(poOnbrd.imgHRMLogo);
+            helpers.customVerifyElementText(poOnbrd.headerLogin, "Login");
             helpers.customInputText(poOnbrd.inputUsername, prop.getProperty("INV_USERNAME"));
             helpers.customInputText(poOnbrd.inputPassword, prop.getProperty("INV_PWD"));
             helpers.customClick(poOnbrd.btnLogin);
@@ -56,6 +54,7 @@ public class OnboardScenario_HRM extends WebScenario{
         try {
             propUserDetails = getUserDetailsFromPropertiesFile(dataToUse);
             helpers.customVerifyElementPresent(poOnbrd.imgHRMLogo);
+            helpers.customVerifyElementText(poOnbrd.headerLogin, "Login");
             helpers.customInputText(poOnbrd.inputUsername, prop.getProperty("USERNAME"));
             helpers.customInputText(poOnbrd.inputPassword, prop.getProperty("PWD"));
             helpers.customClick(poOnbrd.btnLogin);

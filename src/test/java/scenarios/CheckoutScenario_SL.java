@@ -13,7 +13,7 @@ public class CheckoutScenario_SL extends WebScenario{
     }
 
     public void checkoutProcess(String dataToUse) throws Exception {
-        LOGGER.get().info("Execute-Checkout-Step <<< DATA TO USE >>>" + dataToUse);
+        LOGGER.get().info("Execute-Checkout-Steps <<< DATA TO USE >>>" + dataToUse);
         switch (dataToUse.toUpperCase()) {
             case "ADD_ITEMS":
                 helpers.customVerifyElementText(poCheck.headerProd, "Products");

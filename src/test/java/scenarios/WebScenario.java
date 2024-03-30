@@ -4,6 +4,7 @@ import base.BaseController;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.slf4j.LoggerFactory;
+import pageObjects.orangeHRM.poHome;
 import pageObjects.orangeHRM.poOnboard;
 import pageObjects.swaglabs.poCheckout;
 import pageObjects.swaglabs.poLogin;
@@ -33,6 +34,7 @@ public class WebScenario extends BaseController {
         poLog = new poLogin(driver);
         poCheck = new poCheckout(driver);
         poOnbrd = new poOnboard(driver);
+        poHme = new poHome(driver);
     }
 
     public void executeScenario(String sScenarioDescription, String sUiScenario, WebElement webelementToUse, String dataToUse) throws IOException {
@@ -40,6 +42,7 @@ public class WebScenario extends BaseController {
         loginSC  = new LoginScenario_SL(driver);
         checkSC = new CheckoutScenario_SL(driver);
         onboardSC = new OnboardScenario_HRM(driver);
+        homeSC = new HomeScenario_HRM(driver);
 
         LOGGER.info("== START = Executing Scenario :" + sUiScenario + " : " + dataToUse);
         try {
@@ -61,6 +64,9 @@ public class WebScenario extends BaseController {
                     break;
                 case "ONBOARD_HRM":
                     onboardSC.onboardProcess(dataToUse);
+                    break;
+                case "DASHBOARD_HRM":
+                    homeSC.dashboardScenarios(dataToUse);
                     break;
             }
 
