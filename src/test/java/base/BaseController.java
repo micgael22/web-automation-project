@@ -12,13 +12,11 @@ import org.testng.ITest;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import pageObjects.orangeHRM.poHome;
 import pageObjects.orangeHRM.poOnboard;
 import pageObjects.swaglabs.poCheckout;
 import pageObjects.swaglabs.poLogin;
-import scenarios.CheckoutScenario_SL;
-import scenarios.OnboardScenario_HRM;
-import scenarios.WebScenario;
-import scenarios.LoginScenario_SL;
+import scenarios.*;
 import utilities.GeneralModels;
 import utilities.SeleniumHelpers;
 
@@ -29,8 +27,9 @@ import java.time.Duration;
 public class BaseController extends Constants implements ITest{
     public WebScenario uiActionScenario;
     public LoginScenario_SL loginSC;
-    public OnboardScenario_HRM onboardSC;
     public CheckoutScenario_SL checkSC;
+    public OnboardScenario_HRM onboardSC;
+    public HomeScenario_HRM homeSC;
     public static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class.getSimpleName());
     private static String testName = "";
     public BaseController() throws MalformedURLException {
@@ -82,10 +81,12 @@ public class BaseController extends Constants implements ITest{
         poLog = new poLogin(getDriver());
         poCheck = new poCheckout(getDriver());
         poOnbrd = new poOnboard(getDriver());
+        poHme = new poHome(getDriver());
         /** scenarios **/
         checkSC = new CheckoutScenario_SL(getDriver());
         loginSC = new LoginScenario_SL(getDriver());
         onboardSC = new OnboardScenario_HRM(getDriver());
+        homeSC = new HomeScenario_HRM(getDriver());
         Allure.addAttachment("ProjectBaseExecution : ", general.takeScreenshot("BEFOREMETHOD"));
 
         LOGGER.info("============= BEFORE METHOD =============") ;
