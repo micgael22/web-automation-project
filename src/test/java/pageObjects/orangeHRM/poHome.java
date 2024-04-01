@@ -37,4 +37,48 @@ public class poHome extends Constants {
     @FindBy(css = ".oxd-text--toast-message")
     public WebElement popUpSuccessMsg;
 
+    //banner responsive
+    @FindBy(css = ".oxd-brand-banner > img")
+    public WebElement logoBannerImg;
+    @FindBy(css = ".oxd-main-menu-button")
+    public WebElement btnOpenCloseBanner;
+    @FindBy(css = ".oxd-input")
+    public WebElement bannerSearch;
+    @FindBy(css = ".oxd-main-menu-item")
+    public WebElement bnrSearchedItem;
+    @FindBy(xpath = "//h6[contains(.,'Personal Details')]")
+    public WebElement headerPersonalInfo;
+    //
+
+    @FindBy(css = ".oxd-topbar-header-title")
+    public WebElement topBarTitle;
+    @FindBy(css = ".oxd-text--h6")
+    public WebElement headerMntce;
+    @FindBy(css = ".oxd-button--ghost")
+    public WebElement btnCancel;
+    @FindBy(linkText = "Admin")
+    public WebElement bnrAdmin;
+    @FindBy(linkText = "PIM")
+    public WebElement bnrPIM;
+    @FindBy(linkText = "Leave")
+    public WebElement bnrLeave;
+    @FindBy(linkText = "Time")
+    public WebElement bnrTime;
+    @FindBy(linkText = "Recruitment")
+    public WebElement bnrRecruitment;
+    @FindBy(linkText = "My Info")
+    public WebElement bnrMyInfo;
+    @FindBy(linkText = "Performance")
+    public WebElement bnrPerformance;
+    @FindBy(linkText = "Dashboard")
+    public WebElement bnrDashboard;
+    @FindBy(linkText = "Directory")
+    public WebElement bnrDirectory;
+    @FindBy(linkText = "Maintenance")
+    public WebElement bnrMaintenance;
+    @FindBy(linkText = "Claim")
+    public WebElement bnrClaim;
+    @FindBy(linkText = "Buzz")
+    public WebElement bnrBuzz;
+
 }
