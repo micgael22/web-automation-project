@@ -1,17 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test Suite | Project QA [selenium]"  parallel="tests" thread-count="2" verbose="1">
+<suite name="Test Suite | Project Automation [selenium]" parallel="classes" thread-count="2" verbose="1">
 
+    <!-- parallel="tests | parallel="classes" -->
     <listeners>
         <listener class-name="components.TestListener"/>
     </listeners>
-    <parameter name="WEB_URL" value="https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"/>
+    <parameter name="WEB_URL" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"/>
     <parameter name="TARGET" value="LOCAL"/>
     <parameter name="BROWSER_TYPE" value="CHROME"/>
     <parameter name="WEB_NAME" value="ORANGEHRM"/>
     <parameter name="ENVIRONMENT" value="TESTS"/>
 
-    <test name="ULTIMATE QA">
-
+    <test name="ORANGE HRM">
+        <classes>
+            <class name="tests.orangeHRM.TC_0001_Onboard" />
+            <class name="tests.orangeHRM.TC_0002_Home" />
+        </classes>
     </test>
+
+<!--    <test name="ORANGE HRM">-->
+<!--        <classes>-->
+<!--            <class name="tests.orangeHRM.TC_0002_Home" >-->
+
+<!--            <methods>-->
+<!--                    &lt;!&ndash; onboard &ndash;&gt;-->
+<!--                    <include name="onboard_validLogin"/>-->
+<!--                    <include name="onboard_invalidLogin"/>-->
+<!--                    &lt;!&ndash; dashboard &ndash;&gt;-->
+<!--                    <include name="dashboard_toggleButton"/>-->
+<!--                    &lt;!&ndash; home &ndash;&gt;-->
+<!--                    <include name="home_activeBanner"/>-->
+<!--                    <include name="home_responsiveBanner"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
 </suite>

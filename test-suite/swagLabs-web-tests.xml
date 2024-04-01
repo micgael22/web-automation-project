@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test Suite | Project QA [selenium]"  parallel="tests" thread-count="2" verbose="1">
+<suite name="Test Suite | Project Automation [selenium]" parallel="classes" thread-count="2" verbose="1">
 
+    <!-- parallel="tests | parallel="classes" -->
     <listeners>
         <listener class-name="components.TestListener"/>
     </listeners>
@@ -13,15 +14,36 @@
 
     <test name="SWAG LABS">
         <classes>
-            <class name="tests.swagLabs.TC_0002Checkout">
-                <methods>
-                    <include name="checkoutTC_completeOrder"/>
-<!--                    <include name="clickable_button_fail"/>-->
-<!--                    <include name="verify_url_fail"/>-->
-<!--                    <include name="loginTC_InvalidPwd"/>-->
-<!--                    <include name="loginIC_InvalidUsrName"/>-->
-                </methods>
-            </class>
+            <class name="tests.swagLabs.TC_0001Login" />
+            <class name="tests.swagLabs.TC_0002Checkout" />
+            <class name="tests.swagLabs.TC_0003_Fail" />
         </classes>
     </test>
+
+<!--    <test name="SWAG LABS">-->
+<!--        <classes>-->
+<!--            <class name="tests.swagLabs.TC_0002Checkout">-->
+<!--                <methods>-->
+<!--                    &lt;!&ndash; login &ndash;&gt;-->
+<!--                    <include name="loginTC_ValidCredsScenarios"/>-->
+<!--                    <include name="loginTC_ValidCreds"/>-->
+<!--                    <include name="loginTC_InvalidCreds"/>-->
+<!--                    <include name="loginTC_InvalidPwd"/>-->
+<!--                    <include name="loginIC_InvalidUsrName"/>-->
+<!--                    &lt;!&ndash; checkout &ndash;&gt;-->
+<!--                    <include name="checkoutTC_AddItems"/>-->
+<!--                    <include name="checkoutTC_ItemDetails"/>-->
+<!--                    <include name="checkoutTC_removeItems"/>-->
+<!--                    <include name="checkoutTC_overview"/>-->
+<!--                    <include name="checkoutTC_completeOrder"/>-->
+<!--                    &lt;!&ndash; fail &ndash;&gt;-->
+<!--                    <include name="verify_item_fail"/>-->
+<!--                    <include name="clickable_button_fail"/>-->
+<!--                    <include name="verify_url_fail"/>-->
+<!--                    <include name="onboard_forgotPassword"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
 </suite>
