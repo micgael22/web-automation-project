@@ -42,8 +42,9 @@ public class CheckoutScenario_SL extends WebScenario{
                 break;
             case "OVERVIEW_CHECKOUT":
                 helpers.customVerifyElementText(poCheck.titleOverview, "Checkout: Overview");
-                helpers.customVerifyElementText(poCheck.lblPayment, "Payment Information");
-                helpers.customVerifyElementText(poCheck.lblShipping, "Shipping Information");
+                helpers.customVerifyElementText(poCheck.lblPayment, "Payment Information:");
+                helpers.scrollToBottom();
+                helpers.customVerifyElementText(poCheck.lblShipping, "Shipping Information:");
                 helpers.customVerifyElementText(poCheck.lblPrice, "Price Total");
                 helpers.customVerifyElementPresent(poCheck.lblTaxAmount);
                 helpers.customVerifyElementPresent(poCheck.totalAmount);

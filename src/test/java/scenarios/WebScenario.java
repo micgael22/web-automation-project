@@ -68,6 +68,9 @@ public class WebScenario extends BaseController {
                 case "DASHBOARD_HRM":
                     homeSC.dashboardScenarios(dataToUse);
                     break;
+                case "HOME_HRM":
+                    homeSC.homeScenarios(dataToUse);
+                    break;
             }
 
             LOGGER.info("== END : Executing Scenario : " + sUiScenario + " : " + dataToUse);
