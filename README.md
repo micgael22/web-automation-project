@@ -1,5 +1,7 @@
 # WEB_AUTOMATION_PROJECT <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Activity/1st%20Place%20Medal.webp" alt="1st Place Medal" width="35" height="35" />
-##### Welcome to my Web Automation Project! This project is a flexible and extensible framework for creating, executing, and managing automated tests.
+#### Welcome to my Web Automation Project! This project is a flexible and extensible framework for creating, executing, and managing automated tests.
+##### ( Java / Selenium framework ) <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="25" height="25" />
+######  IntelliJ IDE : Selenium IDE : WebDriverIO : Log4j : Git : Github : Maven : Greenshot
 
 ### Features: <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Books.webp" alt="Books" width="25" height="25" />
 :black_small_square: Keyword-Driven Testing
@@ -41,10 +43,10 @@
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" alt="Satellite Antenna" width="20" height="20" /> pom.xml
 
-### Allure-results: <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Memo.webp" alt="Memo" width="25" height="25" />
+### Allure-results: <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Newspaper.webp" alt="Newspaper" width="25" height="25" />
 <img align="center" width="950" height="425" src="https://github.com/micgael22/web-automation-advance/assets/88590240/998cbdb4-8fbd-4125-ab95-0bb18aa17f8d">
 
-### Framework layout:
+### Framework layout: <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Rocket.webp" alt="Rocket" width="25" height="25" />
 #### NOTE!! More tests and changes wil be added to this frame work... 
 <img align="center" width="250" height="425" src="https://github.com/micgael22/web-automation-advance/assets/88590240/0857b3d1-bf2e-43bc-8699-461467ae2e37">
 
