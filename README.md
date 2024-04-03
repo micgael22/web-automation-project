@@ -44,7 +44,7 @@
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" alt="Satellite Antenna" width="20" height="20" /> pom.xml
 
 ### Allure-results: <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Newspaper.webp" alt="Newspaper" width="25" height="25" />
-<img align="center" width="950" height="425" src="https://github.com/micgael22/web-automation-advance/assets/88590240/998cbdb4-8fbd-4125-ab95-0bb18aa17f8d">
+<img align="center" width="800" height="400" src="https://github.com/micgael22/web-automation-advance/assets/88590240/998cbdb4-8fbd-4125-ab95-0bb18aa17f8d">
 
 ### Framework layout: <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Rocket.webp" alt="Rocket" width="25" height="25" />
 #### NOTE!! More tests and changes wil be added to this frame work... 
