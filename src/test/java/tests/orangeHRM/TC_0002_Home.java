@@ -42,5 +42,18 @@ public class TC_0002_Home extends BaseController {
         uiActionScenario.executeScenario("User navigates through banner - pages","HOME_HRM",null,"banner_verify_pages");
     }
 
+    @Description("User search option in banner")
+    @Severity(SeverityLevel.MINOR)
+    @Story("Orange HRM")
+    @Test(groups = {"Home"}, description = "TC_ID=06004 | Verify search input is responsive")
+    public void home_searchResponsive() throws Exception {
+        uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_HRM",null,"hrm.user00");
+        uiAction.executeStep("User search option", "INPUT_TEXT", poHme.bannerSearch, "PIM");
+        uiAction.executeStep("User click on option","CLICK",poHme.bnrPIM,null);
+        uiAction.executeStep("Wait added","wait",null,"3");
+        uiAction.executeStep("Verify title present", "VERIFY_ELEMENT_TEXT", poHme.topBarTitle, "PIM");
+
+    }
+
 
 }
