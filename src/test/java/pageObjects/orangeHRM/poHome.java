@@ -81,4 +81,63 @@ public class poHome extends Constants {
     @FindBy(linkText = "Buzz")
     public WebElement bnrBuzz;
 
+    // Time sheets
+    @FindBy(xpath = "//li[contains(.,'Timesheets ')]")
+    public WebElement ddTSheets;
+    @FindBy(linkText = "My Timesheets")
+    public WebElement itemMyTSheets;
+    @FindBy(css = ".bi-calendar")
+    public WebElement iconCalender;
+    @FindBy(css = ".oxd-calendar-selector-month-selected > .oxd-icon")
+    public WebElement ddMonth;
+    @FindBy(css = ".oxd-calendar-dropdown--option:nth-child(4)")
+    public WebElement selectMonth;
+    @FindBy(css = ".oxd-calendar-date-wrapper:nth-child(16) > .oxd-calendar-date")
+    public WebElement selectDate;
+    @FindBy(css = ".oxd-alert-content-text")
+    public WebElement txtNoTimeSheets;
+    // attendance
+    @FindBy(xpath = "//span[contains(.,'Attendance ')]")
+    public WebElement ddAttendance;
+    @FindBy(linkText = "Configuration")
+    public WebElement itemConfig;
+    @FindBy(xpath = "//p[contains(.,'Employee can change current time when punching in/out')]")
+    public WebElement txtChangeTime;
+    @FindBy(css = ".orangehrm-attendance-field-row:nth-child(1) .oxd-switch-input")
+    public WebElement toggleBtn01;
+    @FindBy(xpath = "//p[contains(.,'Employee can edit/delete own attendance records')]")
+    public WebElement txtDeleteRecords;
+    @FindBy(css = ".orangehrm-attendance-field-row:nth-child(2) .oxd-switch-input")
+    public WebElement toggleBtn02;
+    @FindBy(xpath = "//p[contains(.,'Supervisor can add/edit/delete attendance records of subordinates')]")
+    public WebElement txtEditRecords;
+    @FindBy(css = ".orangehrm-attendance-field-row:nth-child(3) .oxd-switch-input")
+    public WebElement toggleBtn03;
+    // reports
+    @FindBy(css = ".oxd-topbar-body-nav-tab:nth-child(3) > .oxd-topbar-body-nav-tab-item") // x = //li[contains(.,'Reports ')]
+    public WebElement ddReports;
+    @FindBy(linkText = "Employee Reports")
+    public WebElement itemEmpReports;
+    @FindBy(xpath = "//div/div[2]/div/div/input") // unstable and duplicate elements
+    public WebElement inputEmpName;
+    @FindBy(xpath = "//div[2]/div/div/div/div[2]/div/div/input") // unstable and duplicate elements
+    public WebElement inputProjectName;
+    @FindBy(css = ".oxd-switch-input")
+    public WebElement toggleBtnApprove;
+    @FindBy(css = ".bi-caret-up-fill")
+    public WebElement arrowBtnHide; // css=.oxd-icon-button > .bi-caret-down-fill
+    @FindBy(css = ".oxd-icon-button > .bi-caret-down-fill")
+    public WebElement arrowBtnOpen;
+    //Project Info
+    @FindBy(xpath = "//span[contains(.,'Project Info ')]")
+    public WebElement ddProjectInfo;
+    @FindBy(linkText = "Customers")
+    public WebElement itemCustomers;
+    @FindBy(css = ".orangehrm-main-title")
+    public WebElement titleCustomers;
+    @FindBy(css = ".oxd-button")
+    public WebElement btnAddCustomer;
+    @FindBy(css = ".oxd-button--ghost")
+    public WebElement btnCancel01;
+
 }
