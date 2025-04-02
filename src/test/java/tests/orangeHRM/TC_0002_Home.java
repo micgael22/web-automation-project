@@ -52,7 +52,22 @@ public class TC_0002_Home extends BaseController {
         uiAction.executeStep("User click on option","CLICK",poHme.bnrPIM,null);
         uiAction.executeStep("Wait added","wait",null,"3");
         uiAction.executeStep("Verify title present", "VERIFY_ELEMENT_TEXT", poHme.topBarTitle, "PIM");
-
+    }
+    
+    @Description("User verify Time page is responsive")
+    @Severity(SeverityLevel.MINOR)
+    @Story("Orange HRM")
+    @Test(groups = {"Home"}, description = "TC_ID=0801 | User navigate through sub Time page sub-categories")
+    public void home_timeSheetsResponsive() throws Exception {
+        uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_HRM",null,"hrm.user00");
+        uiAction.executeStep("User search option", "INPUT_TEXT", poHme.bannerSearch, "Time");
+        uiAction.executeStep("User click on option","CLICK",poHme.bnrTime,null);
+        uiAction.executeStep("Wait added","wait",null,"3");
+        uiActionScenario.executeScenario("User navigates through the Time sheets section", "HOME_HRM",null,"time_sheets_nav");
+        uiActionScenario.executeScenario("User navigates through the Attendance section", "HOME_HRM",null,"attendance_nav");
+        uiActionScenario.executeScenario("User navigates through the Reports section", "HOME_HRM",null,"reports_nav");
+        uiActionScenario.executeScenario("User navigates through the Projects section", "HOME_HRM",null,"project_info_nav");
+        LOGGER.info("===== LOG: User able to navigate through the TIME PAGE  =====");
     }
 
 
