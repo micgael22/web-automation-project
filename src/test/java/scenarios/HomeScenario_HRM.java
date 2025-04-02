@@ -77,6 +77,44 @@ public class HomeScenario_HRM extends WebScenario{
                 helpers.customClick(poHme.bnrBuzz);
                 helpers.customVerifyElementText(poHme.topBarTitle, "Buzz");
                 break;
+            case "TIME_SHEETS_NAV":
+                helpers.customClick(poHme.ddTSheets);
+                helpers.customClick(poHme.itemMyTSheets);
+                helpers.customClick(poHme.iconCalender);
+                helpers.customClick(poHme.ddMonth);
+                helpers.customClick(poHme.selectMonth);
+                helpers.customClick(poHme.selectDate);
+                helpers.customVerifyElementText(poHme.txtNoTimeSheets, "No Timesheets Found");
+                break;
+            case "ATTENDANCE_NAV":
+                helpers.customClick(poHme.ddAttendance);
+                helpers.customClick(poHme.itemConfig);
+                helpers.customVerifyElementText(poHme.txtChangeTime, "Employee can change current time when punching in/out");
+                helpers.customClick(poHme.toggleBtn01);
+                helpers.customVerifyElementText(poHme.txtDeleteRecords, "Employee can edit/delete own attendance records");
+                helpers.customClick(poHme.toggleBtn02);
+                helpers.customVerifyElementText(poHme.txtEditRecords, "Supervisor can add/edit/delete attendance records of subordinates");
+                helpers.customClick(poHme.toggleBtn03);
+                break;
+            case "REPORTS_NAV":
+                helpers.customClick(poHme.ddReports);
+                helpers.customClick(poHme.itemEmpReports);
+                helpers.customSetText(poHme.inputEmpName, "Micgael Julies");
+                helpers.customSetText(poHme.inputProjectName, "QA AUTOMATION PROJECT");
+                helpers.customClick(poHme.toggleBtnApprove);
+                helpers.customClick(poHme.arrowBtnHide); // Hide information
+                helpers.customWait("2");
+                helpers.customClick(poHme.arrowBtnOpen); // Open information
+                break;
+            case "PROJECT_INFO_NAV":
+                helpers.customClick(poHme.ddProjectInfo);
+                helpers.customClick(poHme.itemCustomers);
+                helpers.customVerifyElementText(poHme.titleCustomers, "Customers");
+                helpers.customClick(poHme.btnAddCustomer);
+                helpers.customClick(poHme.btnCancel01);
+                helpers.customWait("2");
+                helpers.customVerifyElementPresent(poHme.titleCustomers);
+                break;
         }
     }
 
