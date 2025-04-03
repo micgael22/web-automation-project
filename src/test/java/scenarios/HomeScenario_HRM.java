@@ -115,6 +115,32 @@ public class HomeScenario_HRM extends WebScenario{
                 helpers.customWait("2");
                 helpers.customVerifyElementPresent(poHme.titleCustomers);
                 break;
+            case "PIM_PAGE_NAV":
+                helpers.customClick(poHme.bnrPIM);
+                helpers.customVerifyElementText(poHme.topBarTitle, "PIM");
+                helpers.customVerifyElementText(poHme.titleEmpInfo, "Employee Information");
+                break;
+            case "EMP_STATUS_NAV":
+                helpers.customVerifyElementText(poHme.lblEmployeeStatus, "Employment Status");
+                helpers.customClick(poHme.ddStatus);
+//                helpers.customClick(poHme.optFreelance);
+                break;
+            case "INCLUDE_NAV":
+                helpers.customVerifyElementText(poHme.lblInclude, "Include");
+                helpers.customClick(poHme.ddInclude);
+                helpers.customClick(poHme.optPastEmployees);
+                break;
+            case "JOB_TITLE_NAV":
+                helpers.customVerifyElementText(poHme.lblJobTitle, "Job Title");
+                helpers.customClick(poHme.ddJobTitle);
+                helpers.customClick(poHme.optJobTitle);
+                helpers.customWait("2");
+                break;
+            case "SUB_UNIT_NAV":
+                helpers.customVerifyElementText(poHme.lblSubUnit, "Sub Unit");
+                helpers.customClick(poHme.ddSubUnit);
+                helpers.customClick(poHme.optSubUnit);
+                break;
         }
     }
 

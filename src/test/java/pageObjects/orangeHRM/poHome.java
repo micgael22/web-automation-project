@@ -140,4 +140,31 @@ public class poHome extends Constants {
     @FindBy(css = ".oxd-button--ghost")
     public WebElement btnCancel01;
 
+    // PIM Page navigation
+    @FindBy(css = ".oxd-text--h5")
+    public WebElement titleEmpInfo;
+    @FindBy(xpath = "//label[contains(.,'Employment Status')]")
+    public WebElement lblEmployeeStatus;
+    @FindBy(xpath = "//div[2]/i") // unstable and duplicate elements
+    public WebElement ddStatus;
+    @FindBy(css = ".oxd-grid-item:nth-child(7) .oxd-select-text")
+    public WebElement optFreelance;
+    @FindBy(xpath = "//label[contains(.,'Include')]")
+    public WebElement lblInclude;
+    @FindBy(xpath = "//div[4]/div/div[2]/div/div/div[2]/i") // unstable and duplicate elements
+    public WebElement ddInclude;
+    @FindBy(css = ".oxd-form")
+    public WebElement optPastEmployees;
+    @FindBy(xpath = "//label[contains(.,'Job Title')]")
+    public WebElement lblJobTitle;
+    @FindBy(xpath = "//div[6]/div/div[2]/div/div/div[2]/i") // unstable and duplicate elements
+    public WebElement ddJobTitle;
+    @FindBy(css = ".oxd-select-text--after > .bi-caret-up-fill")
+    public WebElement optJobTitle;
+    @FindBy(xpath = "//label[contains(.,'Sub Unit')]")
+    public WebElement lblSubUnit;
+    @FindBy(xpath = "//div[7]/div/div[2]/div/div/div[2]/i") // unstable and duplicate elements
+    public WebElement ddSubUnit;
+    @FindBy(css = ".oxd-form-actions")
+    public WebElement optSubUnit;
 }

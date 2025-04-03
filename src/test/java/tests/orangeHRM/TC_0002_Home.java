@@ -70,5 +70,18 @@ public class TC_0002_Home extends BaseController {
         LOGGER.info("===== LOG: User able to navigate through the TIME PAGE  =====");
     }
 
+    @Description("User verify PIM page is responsive")
+    @Severity(SeverityLevel.MINOR)
+    @Story("Orange HRM")
+    @Test(groups = {"Home"}, description = "TC_ID=06005 | User navigate to dropdown icons on PIM page & verify icons is reactive")
+    public void home_pimPageResponsive() throws Exception {
+        uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_HRM",null,"hrm.user00");
+        uiActionScenario.executeScenario("User navigates to PIM page", "HOME_HRM",null,"pim_page_nav");
+        uiActionScenario.executeScenario("User select the Employee Status", "HOME_HRM",null,"emp_status_nav");
+        uiActionScenario.executeScenario("User select an Include option", "HOME_HRM",null,"include_nav");
+        uiActionScenario.executeScenario("User select Job Title", "HOME_HRM",null,"job_title_nav");
+        uiActionScenario.executeScenario("User select an Sub Unit", "HOME_HRM",null,"sub_unit_nav");
+        LOGGER.info("===== LOG: User able to navigate through the PIM PAGE(REACTIVE)  =====");
+    }
 
 }
