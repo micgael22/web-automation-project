@@ -141,6 +141,32 @@ public class HomeScenario_HRM extends WebScenario{
                 helpers.customClick(poHme.ddSubUnit);
                 helpers.customClick(poHme.optSubUnit);
                 break;
+            case "ASSIGN_CLAIM_NAV":
+                helpers.customClick(poHme.bnrClaim);
+                helpers.customVerifyElementText(poHme.topBarTitle, "Claim");
+                helpers.customClick(poHme.btnAssignClaim);
+                break;
+            case "ENTER_CLAIM_DET":
+                helpers.customVerifyElementText(poHme.titleClaimRequest, "Create Claim Request");
+                helpers.customVerifyElementText(poHme.lblEmpName, "Employee Name");
+                helpers.customSetText(poHme.inputEmpName01, "John Dan");
+//                helpers.customWait("3");
+//                helpers.customClick(poHme.optEmpName01);
+                // Event Drop Down
+                helpers.customVerifyElementText(poHme.lblEvent, "Event");
+                helpers.customClick(poHme.ddEvent);
+//                helpers.customClick(poHme.optAccommodation);
+                // Currency Drop Down
+                helpers.customVerifyElementText(poHme.lblCurrency, "Currency");
+                helpers.customClick(poHme.ddCurrency);
+//                helpers.customClick(poHme.optAlgerianDinar);
+                helpers.customVerifyElementText(poHme.lblRemarks, "Remarks");
+                helpers.customSetText(poHme.inputRemarks, "able to insert REMARKS text");
+                helpers.customClick(poHme.btnCreate);
+//                helpers.customVerifyElementText(poHme.popUpMsg, "Remarks");
+                helpers.customVerifyElementText(poHme.errorLabel, "Required");
+                break;
+
         }
     }
 

@@ -167,4 +167,38 @@ public class poHome extends Constants {
     public WebElement ddSubUnit;
     @FindBy(css = ".oxd-form-actions")
     public WebElement optSubUnit;
+    // CLAIM
+    @FindBy(xpath = "//a[contains(text(),'Assign Claim')]")
+    public WebElement btnAssignClaim;
+    @FindBy(css = ".orangehrm-main-title")
+    public WebElement titleClaimRequest;
+    @FindBy(xpath = "//label[contains(.,'Employee Name')]")
+    public WebElement lblEmpName;
+    @FindBy(css = ".oxd-autocomplete-text-input > input")
+    public WebElement inputEmpName01;
+    @FindBy(xpath = "//div[2]/div/div/div/div")
+    public WebElement optEmpName01;
+    @FindBy(xpath = "//label[contains(.,'Event')]")
+    public WebElement lblEvent;
+    @FindBy(css = ".\\--span-column-2 div:nth-child(2)")
+    public WebElement ddEvent;
+    @FindBy(xpath = "//textarea")
+    public WebElement optAccommodation;
+    @FindBy(xpath = "//label[contains(.,'Currency')]")
+    public WebElement lblCurrency;
+    @FindBy(xpath = "//div[2]/i")
+    public WebElement ddCurrency;
+    @FindBy(css = ".\\--span-column-2")
+    public WebElement optAlgerianDinar;
+    @FindBy(xpath = "//label[contains(.,'Remarks')]")
+    public WebElement lblRemarks;
+    @FindBy(css = ".oxd-textarea")
+    public WebElement inputRemarks;
+    @FindBy(css = ".oxd-button--secondary")
+    public WebElement btnCreate;
+    @FindBy(xpath = "//p[contains(.,'Success')]")
+    public WebElement popUpMsg;
+    @FindBy(css = ".oxd-form-row:nth-child(2) .oxd-grid-item:nth-child(1) .oxd-text")
+    public WebElement errorLabel;
+
 }

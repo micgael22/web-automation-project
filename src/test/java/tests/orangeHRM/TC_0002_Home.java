@@ -84,4 +84,14 @@ public class TC_0002_Home extends BaseController {
         LOGGER.info("===== LOG: User able to navigate through the PIM PAGE(REACTIVE)  =====");
     }
 
+    @Description("User verify Claim request page responsive")
+    @Severity(SeverityLevel.MINOR)
+    @Story("Orange HRM")
+    @Test(groups = {"Home"}, description = "TC_ID=06005 | Verify if the user able to details")
+    public void home_claimRequest() throws Exception {
+        uiActionScenario.executeScenario("Login with user a valid details","LOGIN_VALID_HRM",null,"hrm.user00");
+        uiActionScenario.executeScenario("User navigates to Claim page", "HOME_HRM",null,"assign_claim_nav");
+        uiActionScenario.executeScenario("User Enter details and verify Claim Request page responsive", "HOME_HRM",null,"enter_claim_det");
+        LOGGER.info("===== LOG: User able to Claim Request details. =====");
+    }
 }
